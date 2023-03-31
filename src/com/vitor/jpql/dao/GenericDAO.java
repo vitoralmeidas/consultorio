@@ -6,7 +6,7 @@ import java.util.List;
 import javax.persistence.EntityManager;
 
 public abstract class GenericDAO <T, K>{
-	EntityManager em;
+	protected EntityManager em;
 	private Class<T> clazz;
 	
 	@SuppressWarnings("all")
