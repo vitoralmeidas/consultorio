@@ -2,6 +2,7 @@ package com.vitor.jpql.model;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -22,10 +23,10 @@ public class Especialidade {
 	@Column(name = "nm_especialidade", nullable = false)
 	private String nomeEspecialidade;
 
-	@OneToMany(mappedBy = "especialidade")
+	@OneToMany(mappedBy = "especialidade", cascade = CascadeType.ALL)
 	List<Agendamento> agendamento;
 	
-	@OneToMany(mappedBy = "especialidade")
+	@OneToMany(mappedBy = "especialidade", cascade = CascadeType.ALL)
 	private
 	List<Consulta> consultas;
 

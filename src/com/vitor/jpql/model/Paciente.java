@@ -3,6 +3,7 @@ package com.vitor.jpql.model;
 import java.util.Calendar;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -34,10 +35,10 @@ public class Paciente {
 	@Column(name = "ds_genero_paciente")
 	private char genero;
 
-	@OneToMany(mappedBy = "paciente")
+	@OneToMany(mappedBy = "paciente", cascade = CascadeType.ALL)
 	List<Agendamento> agendamentos;
 
-	@OneToMany(mappedBy = "paciente")
+	@OneToMany(mappedBy = "paciente", cascade = CascadeType.ALL)
 	private List<Consulta> consultas;
 
 	public Paciente() {
